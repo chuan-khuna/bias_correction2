@@ -27,12 +27,12 @@ def query_model(ds_path, index, lon, lat):
 
     for ncfile in files:
         ds = Dataset(f"{ds_path}/{ncfile}", 'r')
-        lons = np.array(ds['xlon'][:][0].filled())
-        lats = np.array(ds['xlat'][:, 0].filled())
+        lons = np.round(np.array(ds['xlon'][:][0].filled()), 4)
+        lats = np.round(np.array(ds['xlat'][:, 0].filled()), 4)
 
         # select grid
-        lon_index = np.where(lons == lon)[0][0]
-        lat_index = np.where(lats == lat)[0][0]
+        lon_index = np.where(lons == np.round(lon, 4))[0][0]
+        lat_index = np.where(lats == np.round(lat, 4))[0][0]
 
         # query time
         ds_times = ds['time'][:].filled()
