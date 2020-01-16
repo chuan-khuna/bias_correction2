@@ -59,13 +59,13 @@ for i in range(len(model_indices)):
         
         if model_index == 'pr':
             bc_index = 'bias_corr'
-            # Celcius to Kelvin
+            # to mm/day
             merged[obs_index] /= 86400
 
             train = merged[merged.index < '2000-01-01']
             test = merged[merged.index >= '2000-01-01']
 
-            # bias BiasCorrection
+            # BiasCorrection
             bc = BiasCorrection(train[obs_index], train[model_index])
             c = bc.coef_ratio()
             train[bc_index] = train[model_index] * c
@@ -97,7 +97,7 @@ for i in range(len(model_indices)):
             train = merged[merged.index < '2000-01-01']
             test = merged[merged.index >= '2000-01-01']
 
-            # bias BiasCorrection
+            # BiasCorrection
             bc = BiasCorrection(train[obs_index], train[model_index])
             c = bc.constant_diff()
             train[bc_index] = train[model_index] - c
