@@ -8,6 +8,8 @@
 |       |- /hist, /rcp45, /rcp85
 |
 |- obs_station_rcm.csv
+|
+|- /BiasCorrectionLib
 ```
 
 version ที่อ่านข้อมูลจาก nc file และ แก้ไขข้อมูลที่ nc file ได้
