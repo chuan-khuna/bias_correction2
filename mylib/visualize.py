@@ -15,8 +15,8 @@ sns.set_context("paper",
                 })
 
 
-def qqplot(observed, model, num_points=50):
+def qqplot(observed, model, label, num_points=50):
     qth = np.linspace(0, 100, num_points+1)
     obs_quartile = np.percentile(observed, qth)
     mod_quartile = np.percentile(model, qth)
-    sns.scatterplot(obs_quartile, mod_quartile)
+    sns.scatterplot(obs_quartile, mod_quartile, label=label)
