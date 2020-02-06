@@ -40,10 +40,11 @@ def query_model(ds_path, index, lon, lat):
         dates = np.array(_shift_time(ds_times, start_date))
 
         # query_data
-        try:
-            data = np.round(np.array(ds[index][:, 0, lat_index, lon_index].filled(), dtype=np.float), 4)
-        except:
-            data = np.round(np.array(ds[index][:, lat_index, lon_index].filled(), dtype=np.float), 8)
+        data = np.array(ds[index][:, 0, lat_index, lon_index].filled(), dtype=np.float).squeeze()
+        if index == 'pr':
+            data = np.round(data, 8)
+        else:
+            data = np.round(data, 4)
 
         ds.close()
 
