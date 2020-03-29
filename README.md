@@ -16,10 +16,6 @@ version ที่อ่านข้อมูลจาก nc file และ แ�
 
 ## Another Repository by Chuan
 
-#### [flask-api](https://github.com/chuan-khuna/flask-api)
-
-- web app back-end
-
 #### [BiasCorrectionLib](https://github.com/chuan-khuna/BiasCorrectionLib)
 
 - ไลบรารี่ Bias correction อย่างง่ายที่เขียนเอง สำหรับใช้ใน Bias correction v2
@@ -36,6 +32,11 @@ version ที่อ่านข้อมูลจาก nc file และ แ�
 
 - ดูผลลัพธ์ของการทำ Bias correction ในด้านของการนำไปคำนวณ climdex ด้วย
 - จัด format ข้อมูลเพื่อให้โปรแกรม Climpact ประมวลผลเป็น index ได้
+
+### [flask-api](https://github.com/chuan-khuna/flask-api)
+
+- web app back-end
+
 
 ### [txt_indices_to_nc](https://github.com/chuan-khuna/txt_indices_to_nc)
 
